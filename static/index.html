@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>TEST</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="cvv-wrapper"></div>
+        <button id="theme-red">theme-red</button>
+        <button id="theme-blue">theme-blue</button>
+        <button id="theme-yellow">theme-yellow</button>
+        <script src="https://beta-sdk.mercadopago.com/js/v2"></script>
+        <script src="js/bricks.js"></script>
+        <script>
+            function setupTheme(theme, f) {
+                const node = document.getElementById(`theme-${theme}`);
+                node.onclick = () => f.setTheme(theme);
+            }
+
+            (async function() {
+                window.MercadoPagoSDK = new MercadoPago('TEST-f04f13ef-cbb3-4ce0-b68f-f1746036de84');
+                const b = await Bricks(window.MercadoPagoSDK);
+                const f = b.create('CVV');
+                f.mount('cvv-wrapper');
+                setupTheme('red', f);
+                setupTheme('blue', f);
+                setupTheme('yellow', f);
+            })();
+        </script>
+    </body>
+</html>

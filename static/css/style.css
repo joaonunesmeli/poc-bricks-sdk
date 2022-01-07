@@ -1,0 +1,22 @@
+:root {
+    --bg: rgba(0, 0, 0, 0);
+}
+
+.brick-root {
+    background-color: var(--bg);
+}
+
+.brick-label {
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.brick-input-wrapper {
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.brick-helper-text {
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
